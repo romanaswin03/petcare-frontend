@@ -30,19 +30,19 @@ const Navbar = () => {
             <div className="space-x-6 text-gray-700 font-medium">
                 <a href="#" className="hover:text-blue-600">Home</a>
                 <a href="#services" className="hover:text-blue-600">Services</a>
-                <a href="#contact" className="hover:text-blue-600">Contact</a>
+        
                  {user ? (
                 <>
                     {
                         user.role === 'doctor' && (
                             <>
-                            <Link to="/doctor-dashboard" className="hover:text-blue-600">Doctor Dashboard</Link>
-                            <Link to="/appointment-summary" className="hover:text-blue-600">Appointment Summary</Link>
+                            <Link to="/doctor-dashboard" className="hover:text-blue-600">Dashboard</Link>
+                            <Link to="/appointment-summary" className="hover:text-blue-600">Appointments</Link>
                             </>
                         )
                     }
                 
-                <span>Hello, {user.name}</span>
+                <span>Hi, {user.name}</span>
                     <button onClick={handleLogout} className="bg-blue-600 text-white px-4 py-1 rounded">Logout</button>
                     </>) : (<Link to="/login" className="bg-blue-600 text-white px-4 py-1 rounded">Login</Link>
                     )}
